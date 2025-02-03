@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/your-username/nginx-load-balancer.git'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'scp -r app ubuntu@54.196.209.199 :/var/www/html'
+                sh 'scp -r app ubuntu@34.203.28.21:/var/www/html'
+                sh 'scp -r app ubuntu@3.92.25.226:/var/www/html'
+            }
+        }
+    }
+}
