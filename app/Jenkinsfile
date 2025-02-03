@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/nginx-load-balancer.git'
+                git 'https://github.com/sarunsarun/nginx-load-balancer.git'
             }
         }
         stage('Deploy') {
